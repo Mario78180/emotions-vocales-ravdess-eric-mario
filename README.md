@@ -1,6 +1,6 @@
 # 🎙️ Reconnaissance d'Émotions Vocales — RAVDESS
 
-**Auteurs : Eric Mantot & Mario Letinevez**  
+**Auteurs : Eric Mantot & Mario Le Tinevez**  
 *Module Machine Listening — ESEO*
 
 ## Description
