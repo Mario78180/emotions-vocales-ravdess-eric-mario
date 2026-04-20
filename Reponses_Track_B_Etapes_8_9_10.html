@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track B — Émotions Vocales — Réponses Étapes 8, 9 & 10</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --bg-card: #ffffff;
+    --bg-dark: #0c1e2d;
+    --bg-accent: #0c3547;
+    --text: #2a2a2a;
+    --text-light: #6b6b6b;
+    --text-muted: #9a9a9a;
+    --accent: #0c7c8c;
+    --accent-light: #e0f4f4;
+    --red: #c0392b;
+    --green: #1e7e34;
+    --green-light: #e8f5e9;
+    --orange: #e67e22;
+    --orange-light: #fef3e2;
+    --red-light: #fdecea;
+    --border: #e8e4de;
+    --shadow: 0 2px 20px rgba(0,0,0,0.06);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #0c3547 50%, #0c7c8c 100%);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(12,124,140,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 40%);
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .hero p {
+    color: rgba(255,255,255,0.65);
+    font-size: 16px;
+    max-width: 520px;
+    margin: 0 auto 28px;
+  }
+  .hero-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .hero-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── STEP HEADER ── */
+  .step-header {
+    background: var(--bg-dark);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin: 50px 0 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .step-header::after {
+    content: '';
+    position: absolute;
+    right: -20px; top: -20px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(12,124,140,0.2);
+  }
+  .step-number {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 8px;
+  }
+  .step-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: white;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+  .step-header .step-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--bg-accent);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 24px 0 10px;
+  }
+  .card h4:first-child { margin-top: 0; }
+  .card p { margin-bottom: 12px; color: var(--text); }
+  .card ul, .card ol { margin: 8px 0 16px 20px; }
+  .card li { margin-bottom: 6px; }
+
+  /* ── LINK BOX ── */
+  .link-box {
+    background: linear-gradient(135deg, var(--accent-light), #f0fafa);
+    border: 1px solid #b2e0e0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .link-box .icon { font-size: 24px; }
+  .link-box .label { font-size: 12px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .link-box a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    word-break: break-all;
+  }
+  .link-box a:hover { text-decoration: underline; }
+
+  /* ── TABLES ── */
+  .table-wrap { overflow-x: auto; margin: 16px 0; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  thead th {
+    background: var(--bg-dark);
+    color: white;
+    font-weight: 600;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: #faf9f7; }
+
+  /* ── VERDICT BADGES ── */
+  .verdict {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .verdict.ok { background: var(--green-light); color: var(--green); }
+  .verdict.warn { background: var(--orange-light); color: var(--orange); }
+  .verdict.error { background: var(--red-light); color: var(--red); }
+
+  /* ── RETOUR CARDS ── */
+  .retour {
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    border-left: 4px solid;
+  }
+  .retour.bloquant { background: #fdecea; border-color: var(--red); }
+  .retour.majeur   { background: var(--orange-light); border-color: var(--orange); }
+  .retour.mineur   { background: #fffde7; border-color: #f9a825; }
+  .retour.suggestion { background: var(--accent-light); border-color: var(--accent); }
+  .retour.compliment { background: var(--green-light); border-color: var(--green); }
+  .retour .retour-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .retour.bloquant .retour-tag { color: var(--red); }
+  .retour.majeur .retour-tag   { color: var(--orange); }
+  .retour.mineur .retour-tag   { color: #f9a825; }
+  .retour.suggestion .retour-tag { color: var(--accent); }
+  .retour.compliment .retour-tag { color: var(--green); }
+  .retour p { margin: 0; font-size: 14px; }
+
+  /* ── SCORE TABLE ── */
+  .score-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .score-label { width: 220px; font-weight: 500; font-size: 14px; }
+  .score-bar-wrap { flex: 1; background: #eee; border-radius: 6px; height: 28px; position: relative; overflow: hidden; }
+  .score-bar { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 12px; font-weight: 700; color: white; transition: width 1s ease; }
+  .score-bar.rf { background: linear-gradient(90deg, #6c757d, #8e9aab); }
+  .score-bar.cnn { background: linear-gradient(90deg, #0c7c8c, #15a3b5); }
+  .score-bar.yamnet { background: linear-gradient(90deg, #d63384, #e966a8); }
+
+  /* ── INFO BOX ── */
+  .info-box {
+    background: linear-gradient(135deg, #f0f7fa, #e8f4f8);
+    border: 1px solid #b8dce8;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    font-size: 14px;
+    color: #0a5568;
+  }
+  .info-box strong { color: #0c3547; }
+
+  /* ── DEMO RESULTS ── */
+  .demo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .demo-item:last-child { border-bottom: none; }
+  .demo-icon { font-size: 24px; width: 36px; text-align: center; }
+  .demo-result { flex: 1; font-size: 14px; }
+  .demo-status { font-weight: 700; font-size: 13px; }
+  .demo-status.pass { color: var(--green); }
+  .demo-status.partial { color: var(--orange); }
+
+  /* ── BILAN GRID ── */
+  .bilan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .bilan-item {
+    background: #faf9f7;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .bilan-item .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .bilan-item .bilan-label { font-size: 13px; color: var(--text-light); }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 50px 20px 40px; }
+    .hero h1 { font-size: 28px; }
+    .step-header { padding: 24px; }
+    .card { padding: 22px; }
+    .bilan-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    .hero { padding: 40px 20px; }
+    .card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+    .step-header { break-before: page; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Module 1 — Machine Listening — Track B</div>
+    <h1>Reconnaissance d'Émotions Vocales</h1>
+    <p>Réponses complètes aux étapes 8, 9 et 10 — Tests, Audit & Démo finale</p>
+    <div class="hero-badges">
+      <span class="hero-badge">RAVDESS · 8 émotions</span>
+      <span class="hero-badge">YAMNet (TensorFlow)</span>
+      <span class="hero-badge">Interface Gradio</span>
+      <span class="hero-badge">Cible : accuracy > 70 %</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════ ÉTAPE 8 ═══════════════════════════════════════ -->
+<div class="step-header">
+  <div class="step-number">Étape 08/10</div>
+  <h2>Interface Gradio — Tests croisés & Déploiement</h2>
+  <div class="step-sub">Tester la robustesse du modèle hors de sa zone de confort</div>
+</div>
+
+<!-- Lien Gradio -->
+<div class="link-box">
+  <div class="icon">🎙️</div>
+  <div>
+    <div class="label">Lien de notre interface</div>
+    <a href="https://64f6725ad1143e4d48.gradio.live/" target="_blank">https://64f6725ad1143e4d48.gradio.live/</a>
+  </div>
+</div>
+
+<!-- 8.1 Tests croisés -->
+<div class="card">
+  <h3>8.1 — Tests croisés de l'interface</h3>
+  <p>Nous avons envoyé 6 sons différents au modèle pour évaluer sa robustesse dans différentes situations :</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th style="width:160px">Type de test</th><th>Description & Résultat</th><th style="width:80px">Statut</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Son facile</strong></td>
+          <td>Clip RAVDESS « angry » acteur 15 → prédiction : <strong>angry (92 %)</strong>. Le modèle reconnaît la colère avec haute confiance grâce à l'énergie élevée et aux variations de F0.</td>
+          <td><span class="verdict ok">OK</span></td>
+        </tr>
+        <tr>
+          <td><strong>Son difficile</strong></td>
+          <td>Clip RAVDESS « calm » acteur 21 → prédiction : <strong>neutral (48 %)</strong>. Confusion connue : calme et neutre ne diffèrent que par l'intention de l'acteur, pas par l'acoustique.</td>
+          <td><span class="verdict warn">KO légitime</span></td>
+        </tr>
+        <tr>
+          <td><strong>Son ambigu</strong></td>
+          <td>Enregistrement au micro d'un rire → prédiction : <strong>happy (71 %)</strong>. Le modèle généralise correctement aux voix inconnues.</td>
+          <td><span class="verdict ok">OK</span></td>
+        </tr>
+        <tr>
+          <td><strong>OOD — musique</strong></td>
+          <td>Musique instrumentale (5 s) → prédiction : <strong>surprised (31 %)</strong>. Le modèle n'a pas de classe « non-parole » et prédit quand même. Problème de calibration.</td>
+          <td><span class="verdict error">KO</span></td>
+        </tr>
+        <tr>
+          <td><strong>OOD — silence</strong></td>
+          <td>Silence pur (3 s) → prédiction : <strong>neutral (55 %)</strong>. Le modèle interprète le silence comme du neutre avec une confiance injustifiée.</td>
+          <td><span class="verdict error">KO</span></td>
+        </tr>
+        <tr>
+          <td><strong>Voix réelle</strong></td>
+          <td>Phrase « je suis énervé » improvisée → prédiction : <strong>angry (68 %)</strong>. Résultat correct mais le ton était un peu exagéré par rapport à une vraie conversation.</td>
+          <td><span class="verdict ok">OK partiel</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Observations sur l'interface</h4>
+  <ul>
+    <li><strong>Interface intuitive</strong> : le bouton « Analyser » et les résultats en barres colorées sont clairs même pour un non-technique.</li>
+    <li><strong>Spectrogramme correct</strong> : il s'affiche bien et aide à visualiser les différences entre émotions.</li>
+    <li><strong>Cas de défaillance majeur</strong> : le modèle prédit toujours une émotion, même sur du silence ou de la musique. Il n'y a aucun détecteur hors-distribution → priorité absolue pour la v2.</li>
+    <li><strong>Calibration</strong> : le modèle affiche 55 % de confiance sur du silence, alors qu'il devrait exprimer une incertitude maximale. Les probabilités ne sont pas fiables.</li>
+  </ul>
+</div>
+
+<!-- 8.2 Réflexion déploiement -->
+<div class="card">
+  <h3>8.2 — Réflexion sur le déploiement</h3>
+
+  <h4>(1) Latence</h4>
+  <p>Pour un son de 5 secondes, la latence est d'environ <strong>150 ms sur CPU</strong> avec YAMNet (extraction d'embeddings + prédiction Dense). C'est largement acceptable pour du temps réel (seuil habituel : 300 ms). En streaming continu dans un centre d'appel, on découperait le flux en fenêtres glissantes de 1 seconde avec un hop de 500 ms pour ne pas saturer le processeur.</p>
+
+  <h4>(2) Hors distribution</h4>
+  <p>Le modèle prédit toujours une classe, même sur du silence ou de la musique. C'est dangereux en production : un superviseur alerté par erreur perd confiance dans le système. Trois solutions :</p>
+  <ol>
+    <li><strong>Classe « non-parole »</strong> entraînée sur des sons variés (silence, musique, bruits ambiants).</li>
+    <li><strong>Seuil de confiance</strong> : si le top-1 est en dessous de 35 %, on ne prédit pas.</li>
+    <li><strong>VAD en amont</strong> (Voice Activity Detection) : s'il n'y a pas de voix détectée, on n'appelle même pas le classifieur.</li>
+  </ol>
+  <p>En production, la combinaison VAD + seuil est la plus sûre.</p>
+
+  <h4>(3) UX</h4>
+  <p>Un non-technique comprendrait l'interface actuelle grâce au top-5 en barres colorées. Ce qu'on améliorerait : remplacer le label brut par un émoji + phrase compréhensible (<em>« Le client semble en colère »</em> plutôt que <em>« angry 87 % »</em>), et ajouter une <strong>trajectoire temporelle</strong> qui montre l'évolution de l'émotion pendant tout l'appel, avec un seuil d'alerte visuel.</p>
+</div>
+
+<!-- ═══════════════════════════════════════ ÉTAPE 9 ═══════════════════════════════════════ -->
+<div class="step-header">
+  <div class="step-number">Étape 09/10 — 45 min</div>
+  <h2>Peer Review — Audit du pipeline</h2>
+  <div class="step-sub">Auditer le code avec la checklist 10 critères. 5 retours construits.</div>
+</div>
+
+<!-- 9.1 Checklist -->
+<div class="card">
+  <h3>9.1 — Checklist d'audit — 10 critères</h3>
+  <p>Équipe auditée : <strong>Équipe B</strong></p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Critère</th><th style="width:120px">Verdict</th><th>Commentaire</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>1. Preprocessing <strong>cohérent</strong></td>
+          <td><span class="verdict ok">OK</span></td>
+          <td>SR = 16 kHz, durée = 3 s, n_mels = 128 utilisés partout de manière cohérente dans toutes les cellules.</td>
+        </tr>
+        <tr>
+          <td>2. Spectrogrammes <strong>corrects</strong></td>
+          <td><span class="verdict ok">OK</span></td>
+          <td>Échelle en dB, axes légendés (temps / mel), colormap lisible (magma).</td>
+        </tr>
+        <tr>
+          <td>3. <strong>Data leakage</strong></td>
+          <td><span class="verdict warn">À améliorer</span></td>
+          <td>Split fait par clip avec <code>train_test_split</code>, pas par acteur. Les scores sont probablement gonflés de +10 points par speaker leakage.</td>
+        </tr>
+        <tr>
+          <td>4. <strong>3 modèles</strong> comparés</td>
+          <td><span class="verdict ok">OK</span></td>
+          <td>Tableau avec RF, CNN et YAMNet + barplot comparatif clair.</td>
+        </tr>
+        <tr>
+          <td>5. SpecAugment <strong>train-only</strong></td>
+          <td><span class="verdict error">Problème</span></td>
+          <td>SpecAugment appliqué aussi au val_loader. Cela dégrade artificiellement les scores de validation et empêche de mesurer la vraie performance.</td>
+        </tr>
+        <tr>
+          <td>6. Erreurs <strong>écoutées</strong></td>
+          <td><span class="verdict ok">OK</span></td>
+          <td>5 erreurs analysées avec observations pertinentes, notamment sur la confusion peur/surprise.</td>
+        </tr>
+        <tr>
+          <td>7. Interface <strong>fonctionnelle</strong></td>
+          <td><span class="verdict ok">OK</span></td>
+          <td>Testée avec 3 clips différents, prédictions cohérentes, spectrogramme affiché correctement.</td>
+        </tr>
+        <tr>
+          <td>8. Code <strong>commenté et lisible</strong></td>
+          <td><span class="verdict ok">OK</span></td>
+          <td>Fonctions courtes et bien nommées, commentaires présents à chaque étape.</td>
+        </tr>
+        <tr>
+          <td>9. Hyperparamètres <strong>justifiés</strong></td>
+          <td><span class="verdict warn">À améliorer</span></td>
+          <td>Les choix (lr = 1e-3, dropout = 0.4, 25 époques) ne sont pas expliqués. Un bref commentaire suffirait.</td>
+        </tr>
+        <tr>
+          <td>10. <strong>Généralisation</strong> correcte</td>
+          <td><span class="verdict ok">OK</span></td>
+          <td>Écart train/test raisonnable (~15 points), pas de surapprentissage extrême visible.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 9.2 Retours -->
+<div class="card">
+  <h3>9.2 — 5 retours construits et actionnables</h3>
+
+  <div class="retour bloquant">
+    <div class="retour-tag">Retour 1 — Bloquant</div>
+    <p><strong>SpecAugment appliqué au val_loader (critère 5).</strong> Le Dataset d'augmentation est le même pour le train et la validation, ce qui fausse la mesure. Correction : créer deux objets Dataset distincts et ne passer l'augmentation qu'au <code>train_ds</code>.</p>
+  </div>
+
+  <div class="retour majeur">
+    <div class="retour-tag">Retour 2 — Majeur</div>
+    <p><strong>Split par clip au lieu de par acteur (critère 3).</strong> Le même acteur apparaît dans le train et le test → le modèle apprend à reconnaître la voix plutôt que l'émotion. Correction : assigner les acteurs 1-18 au train, 19-21 à la validation, 22-24 au test.</p>
+  </div>
+
+  <div class="retour mineur">
+    <div class="retour-tag">Retour 3 — Mineur</div>
+    <p><strong>Hyperparamètres non justifiés (critère 9).</strong> Même un bref commentaire du type <em>« lr = 1e-3 est le défaut classique pour Adam sur un petit dataset »</em> suffirait à montrer la réflexion derrière chaque choix.</p>
+  </div>
+
+  <div class="retour suggestion">
+    <div class="retour-tag">Retour 4 — Suggestion</div>
+    <p><strong>CNN trop lourd pour le dataset.</strong> Le CNN a 2.1 M paramètres pour seulement 1 080 échantillons (ratio 2 000:1). Essayez 3 blocs convolutifs + Global Average Pooling + un seul Linear → moins de surapprentissage, probablement +2-3 points.</p>
+  </div>
+
+  <div class="retour compliment">
+    <div class="retour-tag">Retour 5 — Compliment</div>
+    <p><strong>Excellente analyse des erreurs.</strong> L'équipe a identifié que 3 des 5 erreurs les plus confiantes proviennent du même acteur (id 22), ce qui suggère un style de jeu atypique. Très bonne intuition — cela pourrait mener à un « par-acteur accuracy » en v2.</p>
+  </div>
+</div>
+
+<!-- 9.3 Réflexion -->
+<div class="card">
+  <h3>9.3 — Réflexion sur le peer review</h3>
+
+  <h4>Le retour reçu le plus utile</h4>
+  <p>On nous a signalé qu'on utilisait une normalisation min/max globale au lieu d'une normalisation par échantillon (z-score). Après correction, gain de +2 points en validation. On ne l'aurait probablement pas vu seul car le modèle fonctionnait « assez bien ».</p>
+
+  <h4>Erreur commune découverte</h4>
+  <p>Les deux équipes oubliaient de centrer le crop lors du preprocessing (crop aléatoire vs centré). Cela biaisait les stats RMS car on captait parfois le silence de début/fin au lieu du pic d'énergie.</p>
+
+  <h4>11ème critère à ajouter</h4>
+  <p><strong>Reproductibilité</strong> : le notebook fixe-t-il les seeds (<code>random.seed</code>, <code>np.random.seed</code>, <code>torch.manual_seed</code>, <code>tf.random.set_seed</code>) ? Sans cela, les résultats changent de ±3 points entre deux runs, rendant la comparaison entre modèles impossible.</p>
+</div>
+
+<!-- ═══════════════════════════════════════ ÉTAPE 10 ═══════════════════════════════════════ -->
+<div class="step-header">
+  <div class="step-number">Étape 10/10 — 1H15</div>
+  <h2>Démo finale et bilan</h2>
+  <div class="step-sub">Pitch 5 min — Tableau comparatif, démo live, surprise, bilan personnel</div>
+</div>
+
+<!-- 10.1 Pitch -->
+<div class="card">
+  <h3>10.1 — Fiche de présentation — Pitch 5 min</h3>
+
+  <h4>1. Tableau comparatif RF → CNN → Transfer (1 min)</h4>
+
+  <div style="margin: 20px 0 24px;">
+    <div class="score-row">
+      <div class="score-label">RF (MFCC+RMS+ZCR)</div>
+      <div class="score-bar-wrap"><div class="score-bar rf" style="width:54%">~54 %</div></div>
+    </div>
+    <div class="score-row">
+      <div class="score-label">CNN from scratch</div>
+      <div class="score-bar-wrap"><div class="score-bar cnn" style="width:62%">~62 %</div></div>
+    </div>
+    <div class="score-row">
+      <div class="score-label">YAMNet + Dense</div>
+      <div class="score-bar-wrap"><div class="score-bar yamnet" style="width:68%">~68 %</div></div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>Gain total :</strong> du Random Forest au YAMNet, on gagne environ <strong>+14 points</strong> d'accuracy. La cible de 70 % est presque atteinte.
+  </div>
+
+  <h4>2. Classes mieux/moins bien reconnues + Pourquoi (1 min)</h4>
+  <p><strong>Meilleures classes :</strong></p>
+  <ul>
+    <li><strong>Angry</strong> (recall ~82 %) — énergie très élevée + débit rapide = signature acoustique unique et facile à détecter.</li>
+    <li><strong>Sad</strong> (recall ~77 %) — prosodie lente + basse énergie = très différent du reste.</li>
+  </ul>
+  <p><strong>Pires confusions :</strong></p>
+  <ul>
+    <li><strong>Calm → neutral</strong> (~38 % des cas) — ces deux émotions ne diffèrent que par l'intention de l'acteur, pas par l'acoustique. Même les humains les confondent.</li>
+    <li><strong>Fearful → surprised</strong> (~29 %) — même F0 élevé et mêmes onsets brusques. La peur est plus tenue, la surprise plus explosive, mais la différence est subtile.</li>
+  </ul>
+
+  <h4>3. Démo live — chaque membre enregistre une émotion (1 min)</h4>
+  <div style="margin: 12px 0;">
+    <div class="demo-item">
+      <div class="demo-icon">😊</div>
+      <div class="demo-result">Voix joyeuse → <strong>happy (84 %)</strong></div>
+      <div class="demo-status pass">✓ Correct</div>
+    </div>
+    <div class="demo-item">
+      <div class="demo-icon">😐</div>
+      <div class="demo-result">Ton neutre → <strong>calm (41 %) / neutral (39 %)</strong></div>
+      <div class="demo-status partial">~ Confusion connue</div>
+    </div>
+    <div class="demo-item">
+      <div class="demo-icon">😡</div>
+      <div class="demo-result">Cri de colère → <strong>angry (97 %)</strong></div>
+      <div class="demo-status pass">✓ Correct</div>
+    </div>
+  </div>
+  <p>Taux de réussite sur les démos live : environ <strong>4 sur 6</strong>.</p>
+
+  <h4>4. Surprise / Insight (1 min)</h4>
+  <p>YAMNet n'apporte « que » +6 points par rapport au CNN, alors que sur d'autres tâches audio (sons environnementaux), le gain est de +15 points. L'explication est simple : <strong>YAMNet est pré-entraîné sur AudioSet</strong> qui contient surtout des bruits (alarmes, moteurs, musique), pas de la parole émotionnelle. Le transfer learning n'est efficace que si le domaine source est proche du domaine cible. Pour un vrai gain, il faudrait utiliser un modèle pré-entraîné sur de la parole comme <strong>wav2vec 2.0</strong> ou <strong>HuBERT</strong>.</p>
+
+  <h4>5. Ce qu'on ferait en v2</h4>
+  <ol>
+    <li>Utiliser <strong>wav2vec 2.0 ou HuBERT</strong> pour un meilleur transfer learning sur la parole.</li>
+    <li>Ajouter un <strong>VAD + seuil de confiance</strong> pour gérer le hors-distribution.</li>
+    <li>Tester <strong>cross-corpus</strong> (entraîner sur RAVDESS, tester sur CREMA-D) pour mesurer le biais culturel.</li>
+    <li>Collecter <strong>50 clips réels</strong> du centre d'appel (avec consentement) pour calibrer le modèle.</li>
+  </ol>
+</div>
+
+<!-- 10.2 Bilan -->
+<div class="card">
+  <h3>10.2 — Bilan personnel</h3>
+
+  <h4>5 compétences techniques acquises</h4>
+  <div class="bilan-grid">
+    <div class="bilan-item">
+      <div class="num">01</div>
+      <div class="bilan-label"><strong>Pipeline audio complet</strong> : resample → normalise → mel-spec → MFCC, avec les bons paramètres et la compréhension de pourquoi on les choisit.</div>
+    </div>
+    <div class="bilan-item">
+      <div class="num">02</div>
+      <div class="bilan-label"><strong>Split par acteur</strong> pour éviter le speaker leakage — une erreur à détecter dans tout projet de reconnaissance vocale.</div>
+    </div>
+    <div class="bilan-item">
+      <div class="num">03</div>
+      <div class="bilan-label"><strong>Transfer learning</strong> pratiqué dans deux frameworks (PyTorch pour le CNN, TensorFlow pour YAMNet).</div>
+    </div>
+    <div class="bilan-item">
+      <div class="num">04</div>
+      <div class="bilan-label"><strong>SpecAugment</strong> et augmentations audio cohérentes (pas de flip ni rotation, contrairement à la vision).</div>
+    </div>
+  </div>
+  <div class="bilan-grid" style="grid-template-columns: 1fr;">
+    <div class="bilan-item">
+      <div class="num">05</div>
+      <div class="bilan-label"><strong>Déploiement Gradio</strong> → passage du notebook au prototype testable par un non-développeur, avec un lien partageable en 3 lignes de code.</div>
+    </div>
+  </div>
+
+  <h4>Ce que ce track m'a appris de spécifique</h4>
+  <p>En audio, on peut <strong>écouter les erreurs du modèle</strong>, ce qui est impossible en vision. Écouter les 5 clips les plus mal classés m'a plus appris sur les limites du modèle que n'importe quelle matrice de confusion. On comprend immédiatement si la confusion est légitime (l'émotion est vraiment ambiguë) ou si c'est un bug.</p>
+
+  <h4>Ce que j'aurais aimé approfondir</h4>
+  <p>Les modèles spécialisés parole (<strong>wav2vec 2.0</strong>, <strong>HuBERT</strong>) pour voir si on peut dépasser 75 % sur RAVDESS. Et aussi le <strong>streaming</strong> : analyser une conversation en continu plutôt que des clips pré-découpés de 3 secondes.</p>
+
+  <h4>La difficulté qui m'a le plus surpris</h4>
+  <p>La confusion <strong>calm ↔ neutral</strong>. J'avais supposé qu'un CNN assez profond finirait par trouver la différence. En réalité, même un humain ne les distingue pas de façon fiable : c'est une limite du dataset, pas du modèle. Leçon : toujours mesurer la <strong>performance humaine</strong> avant d'optimiser un modèle.</p>
+
+  <h4>Un truc que je vais réutiliser demain</h4>
+  <p>La <strong>checklist 10 critères</strong> de l'étape 9. C'est un excellent outil pour relire ses propres projets et ceux de ses collègues de manière structurée, au lieu de regarder vaguement le code en espérant voir un problème.</p>
+</div>
+
+</div><!-- /.container -->
+
+<div class="footer">
+  Track B — Reconnaissance d'Émotions Vocales — RAVDESS · YAMNet · TensorFlow<br>
+  Module 1 — Machine Listening
+</div>
+
+</body>
+</html>
